@@ -1,0 +1,95 @@
+p {
+  letter-spacing: -0.7px;
+}
+
+@media screen and (max-width: 768px) {
+  footer > div:first-child {
+    display: none;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer-header {
+  font-weight: bold;
+}
+
+footer li {
+}
+
+#hero > div:first-child {
+  letter-spacing: -0.05em;
+}
+
+#hero > p:first-child {
+  background: linear-gradient(
+    93.66deg,
+    #1c1f32 -1.44%,
+    #1c1f32 -1.43%,
+    #6260dd 76.08%
+  );
+}
+
+#hero .number {
+  color: rgba(67, 67, 122, 1);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -0.05em;
+}
+
+.button {
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  background: rgba(98, 96, 221, 1);
+}
+
+.header-tag {
+  /* bg-slate-300 py-2 px-6 mx-32 mt-12 rounded-3xl tracking-tight font-bold text-sm text-gray-900 opacity-50 */
+  padding: 1.5rem 0.5rem;
+  /* margin: 8rem 3rem 8rem; */
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.header-text {
+  /* text-5xl font-bold border md:mx-52 text-center leading-tight  */
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.discover-card {
+  /* border p-5 w-1/3 md:w-1/4  */
+  border: 1px solid black;
+  padding: 1.5rem 1.25rem;
+  width: 40%;
+  border-radius: 20px;
+  background: white;
+}
+
+.discover-card-image {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.discover-card-image img {
+  margin: auto;
+  width: 40px;
+}
+
+.discover-card-header {
+  color: rgba(67, 67, 122, 1);
+  font-weight: 600;
+}
+
+.discover-card-text {
+  font-size: 14px;
+  opacity: 0.7;
+}

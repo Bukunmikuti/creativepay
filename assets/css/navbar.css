@@ -1,0 +1,14 @@
+.header-logo-bg {
+  background: linear-gradient(
+    102.06deg,
+    #6260dd -48.23%,
+    #21242e -1.34%,
+    #6260dd 110.35%,
+    #21242e 164.91%
+  );
+}
+
+.gradient-button {
+  background: linear-gradient(90.81deg, #6260dd -43.97%, #43437a 160.54%);
+  background-blend-mode: darken;
+}

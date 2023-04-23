@@ -2,7 +2,7 @@
 	<nav class="bg-white border-gray-200">
 		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 			<NuxtLink to="/" class="flex items-center p-1.5 mr-3 px-4 rounded-3xl header-logo-bg">
-				<img src="~/assets/images/header.svg" class="h-4 mr-2 " />
+				<img src="~/assets/svg/header.svg" class="h-4 mr-2 " />
 				<span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Menu</span>
 			</NuxtLink>
 			<div class="flex md:order-2">
@@ -66,12 +66,5 @@ export default {
 </script>
 
 <style scoped>
-.header-logo-bg {
-	background: linear-gradient(102.06deg, #6260DD -48.23%, #21242E -1.34%, #6260DD 110.35%, #21242E 164.91%);
-}
-
-.gradient-button {
-	background: linear-gradient(90.81deg, #6260DD -43.97%, #43437A 160.54%);
-	background-blend-mode: darken;
-}
+@import url("~/assets/css/navbar.css");
 </style>
