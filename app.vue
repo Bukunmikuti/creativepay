@@ -1,76 +1,78 @@
 <template>
-  <Head>
-    <Title>Creativepay</Title>
-    <Link rel="icon" :href="icon" />
-  </Head>
+  <div class="body">
 
-  <Navbar />
-  <header id="hero" class="flex gap-8 mx-8 mt-10 flex-col justify-center items-center">
-    <div class="header-tag">
-      <p>
-        <span>Creativepay 2023 release</span>
-        <span class="circle"></span>
-        <span>Job seeker</span>
+    <Head>
+      <Title>Creativepay</Title>
+      <Link rel="icon" :href="icon" />
+    </Head>
+
+    <Navbar />
+    <header id="hero" class="flex gap-8 mx-8 mt-10 flex-col justify-center items-center">
+      <div class="header-tag">
+        <p>
+          <span>Creativepay 2023 release</span>
+          <span class="circle"></span>
+          <span>Job seeker</span>
+        </p>
+      </div>
+      <p class="header-text">
+        Empowering Creative Professionals to Find the Perfect Job
       </p>
-    </div>
-    <p class="header-text">
-      Empowering Creative Professionals to Find the Perfect Job
-    </p>
-    <p class="text-lg font-medium text-center opacity-50 text-[#1E1E1E] md:mx-52">
-      We offer a user-friendly interface and advanced search filters that allow
-      you to narrow down your search and find the right job faster.
-    </p>
-    <div class="flex justify-center py-8 px-14 gap-10 items-center border border-[#1E1E1E] rounded-3xl">
-      <div>
-        <p class="number">20.5+</p>
-        <p>Million Users</p>
-      </div>
-      <div>
-        <p class="number">7.8 B+</p>
-        <p>Jobs Posted</p>
-      </div>
-      <div>
-        <p class="number">201 M</p>
-        <p>Proposals Sent</p>
-      </div>
-    </div>
-    <button type="button" class="button">Get Started <img class="inline absolute h-5 mt-[3px] ml-1.5"
-        src="~/assets/svg/btn_arrow.svg" alt="" />
-    </button>
-    <img src="~/assets/images/header-image.png" alt="image showing map" class="w-4/5 shadow-lg" />
-  </header>
-
-  <section id="discover" class="flex flex-col gap-8 justify-center mx-8 mt-32 items-center">
-    <h1 class="header-tag">
-      Discover Jobs
-    </h1>
-    <p class="header-text text-center">
-      Explore a World of Job Opportunities and Find Your Perfect Fit
-    </p>
-    <div class="">
-      <i class="text-center absolute w-6 mt-[5px] ml-5 "><img src="~/assets/svg/search.svg" class="inline"></i>
-      <input type="search" name="search-bar" id="search-bar" placeholder="Search by company name or role..." disabled
-        class="rounded-3xl w-[340px] pl-14 py-2 leading-tight bg-[#ECEDEB33] border border-[#A1C8CA]" />
-    </div>
-    <div class="flex flex-row flex-wrap justify-center gap-16">
-      <div v-for="card in discover_cards" class="discover-card">
-        <div class="discover-card-image">
-          <img :src="card.src" alt="" class="" />
+      <p class="text-lg font-bold text-center opacity-50 text-[#1E1E1E] md:mx-52">
+        We offer a user-friendly interface and advanced search filters that allow
+        you to narrow down your search and find the right job faster.
+      </p>
+      <div class="flex justify-center py-8 px-10 gap-10 items-center sm:border sm:border-[#1E1E1E] sm:rounded-3xl">
+        <div>
+          <p class="number">20.5+</p>
+          <p>Million Users</p>
         </div>
-        <div class="">
-          <p class="my-5 discover-card-header">
-            {{ card.title }}
-            <img src="~/assets/svg/arrow.svg" alt="" class="inline">
-          </p>
-          <p class="discover-card-text">{{ card.description }}</p>
+        <div>
+          <p class="number">7.8 B+</p>
+          <p>Jobs Posted</p>
+        </div>
+        <div>
+          <p class="number">201 M</p>
+          <p>Proposals Sent</p>
         </div>
       </div>
-    </div>
-    <button type="button" class="button">Browse more roles <img class="inline h-5 mt-[3px] ml-1 absolute"
-        src="~/assets/svg/btn_arrow.svg" alt="" /></button>
-  </section>
+      <button type="button" class="button">Get Started <img class="inline absolute h-5 mt-[3px] ml-1.5"
+          src="~/assets/svg/btn_arrow.svg" alt="" />
+      </button>
+      <img src="~/assets/images/header-image.png" alt="image showing map" class="w-full md:w-4/5 shadow-lg" />
+    </header>
 
-  <!-- <section id="for-candidate" class="flex flex-col gap-8 justify-center mx-8 mt-28 px-6 py-12 items-start">
+    <section id="discover" class="flex flex-col gap-8 justify-center mx-8 mt-32 items-center">
+      <h1 class="header-tag">
+        Discover Jobs
+      </h1>
+      <p class="header-text text-center">
+        Explore a World of Job Opportunities and Find Your Perfect Fit
+      </p>
+      <div class="">
+        <i class="text-center absolute w-6 mt-[5px] ml-5 "><img src="~/assets/svg/search.svg" class="inline"></i>
+        <input type="search" name="search-bar" id="search-bar" placeholder="Search by company name or role..." disabled
+          class="rounded-3xl w-[340px] pl-14 py-2 leading-tight bg-[#ECEDEB33] border border-[#A1C8CA]" />
+      </div>
+      <div class="md:text-justify flex flex-row flex-wrap justify-around md:justify-center gap-2 md:gap-16">
+        <div v-for="card in discover_cards" class="discover-card">
+          <div class="discover-card-image">
+            <img :src="card.src" alt="" class="" />
+          </div>
+          <div class="">
+            <p class="my-5 discover-card-header">
+              {{ card.title }}
+              <img src="~/assets/svg/arrow.svg" alt="" class="inline">
+            </p>
+            <p class="discover-card-text">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="button">Browse more roles <img class="inline h-5 mt-[3px] ml-1 absolute"
+          src="~/assets/svg/btn_arrow.svg" alt="" /></button>
+    </section>
+
+    <!-- <section id="for-candidate" class="flex flex-col gap-8 justify-center mx-8 mt-28 px-6 py-12 items-start">
     <h1 class="header-tag">
       For Candidate
     </h1>
@@ -79,17 +81,17 @@
     </p>
   </section> -->
 
-  <section id="feature-advantage" class="flex flex-col gap-8 justify-center mx-8 mt-28 items-center">
-    <h1 class="header-tag">
-      Feature Advantage
-    </h1>
-    <p class="header-text">
-      Keep in touch with recruiters with our easy made tool
-    </p>
-    <img src="~/assets/images/table_container.png" alt="">
-  </section>
+    <section id="feature-advantage" class="flex flex-col gap-8 justify-center mx-8 mt-28 items-center">
+      <h1 class="header-tag">
+        Feature Advantage
+      </h1>
+      <p class="header-text">
+        Keep in touch with recruiters with our easy made tool
+      </p>
+      <img src="~/assets/images/table_container.png" alt="" class="w-full">
+    </section>
 
-  <!-- <section id="today-job" class="flex flex-col gap-8 justify-center mx-8 mt-28 px-6 py-12 items-start">
+    <!-- <section id="today-job" class="flex flex-col gap-8 justify-center mx-8 mt-28 px-6 py-12 items-start">
     <h1 class="header-tag">
       Today's Job
     </h1>
@@ -116,7 +118,7 @@
     </div>
   </section> -->
 
-  <!-- <section>
+    <!-- <section>
     <h1 class="header-tag">
       Our podcast
     </h1>
@@ -125,54 +127,55 @@
     </p>
   </section> -->
 
-  <footer
-    class="grid grid-flow-row grid-cols-4 md:grid-cols-[6fr_1fr_1fr_1fr_1fr] py-14 px-10 gap-x-10 mt-28 bg-[#FAFBFA]">
-    <div>
-      <img src="~/assets/images/icon.png" class="inline absolute mt-0.5 w-8" alt="">
-      <p class="inline ml-10 text-2xl">Creativepay</p>
-    </div>
-    <div>
-      <p class="footer-header">Creativepay</p>
-      <ul>
-        <li>Job</li>
-        <li>Companies</li>
-        <li>Features</li>
-        <li>Pricing</li>
-        <li>Changelog</li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-header">Social Media</p>
-      <ul>
-        <a href="#">
-          <li>Facebook</li>
-        </a>
-        <a href="#">
-          <li>Instagram</li>
-        </a>
-        <a href="#">
-          <li>Twitter</li>
-        </a>
-        <a href="#">
-          <li>Tiktok</li>
-        </a>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-header">Help</p>
-      <ul>
-        <li>FAQs</li>
-        <li>Support</li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-header">Contact</p>
-      <ul>
-        <li>+234 916 161 8102</li>
-        <li>hellocreativepay.com</li>
-      </ul>
-    </div>
-  </footer>
+    <footer
+      class="grid grid-flow-row grid-cols-4 md:grid-cols-[6fr_1fr_1fr_1fr_1fr] py-14 px-10 gap-x-10 mt-28 bg-[#FAFBFA]">
+      <div>
+        <img src="~/assets/images/icon.png" class="inline absolute mt-0.5 w-8" alt="">
+        <p class="inline ml-10 text-2xl">Creativepay</p>
+      </div>
+      <div>
+        <p class="footer-header">Creativepay</p>
+        <ul>
+          <li>Job</li>
+          <li>Companies</li>
+          <li>Features</li>
+          <li>Pricing</li>
+          <li>Changelog</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-header">Social Media</p>
+        <ul>
+          <a href="#">
+            <li>Facebook</li>
+          </a>
+          <a href="#">
+            <li>Instagram</li>
+          </a>
+          <a href="#">
+            <li>Twitter</li>
+          </a>
+          <a href="#">
+            <li>Tiktok</li>
+          </a>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-header">Help</p>
+        <ul>
+          <li>FAQs</li>
+          <li>Support</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-header">Contact</p>
+        <ul>
+          <li>+234 916 161 8102</li>
+          <li>hellocreativepay.com</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -247,10 +250,14 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Manrope");
 /* @import url("~/assets/css/index.css"); */
 
-p {
-  letter-spacing: -0.7px;
+.body {
+  font-family: Manrope, sans-serif;
+  margin: 0;
+  /* overflow-x: hidden; */
+  letter-spacing: -0.02em;
 }
 
 @media screen and (max-width: 768px) {
@@ -263,7 +270,11 @@ p {
   }
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .header-text {
+    margin: 0rem 6rem;
+  }
+}
 
 li {
   list-style-type: none;
@@ -284,21 +295,10 @@ footer li {
   font-weight: 600;
 }
 
-#hero>div:first-child {
-  letter-spacing: -0.05em;
-}
-
-#hero>p:first-child {
-  background: linear-gradient(93.66deg,
-      #1c1f32 -1.44%,
-      #1c1f32 -1.43%,
-      #6260dd 76.08%);
-}
-
 #hero .number {
   color: #43437A;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -339,18 +339,17 @@ footer li {
 }
 
 .header-text {
-  /* text-5xl font-bold border md:mx-52 text-center leading-tight  */
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   color: #1C1F32;
+  margin: 0px 1rem;
   background-color: white;
   background-image: linear-gradient(93.66deg, #1C1F32 -1.44%, #1C1F32 -1.43%, #6260DD 76.08%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  margin: 0px 3rem;
 }
 
 .discover-card {
