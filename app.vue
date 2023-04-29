@@ -22,7 +22,8 @@
         We offer a user-friendly interface and advanced search filters that allow
         you to narrow down your search and find the right job faster.
       </p>
-      <div class="flex justify-center py-8 px-10 gap-10 items-center sm:border sm:border-[#1E1E1E] sm:rounded-3xl">
+      <div
+        class="number-box flex flex-col sm:flex-row justify-center py-8 px-10 gap-10 items-center border border-[#1E1E1E] rounded-3xl">
         <div>
           <p class="number">20.5+</p>
           <p>Million Users</p>
@@ -54,13 +55,13 @@
         <input type="search" name="search-bar" id="search-bar" placeholder="Search by company name or role..." disabled
           class="rounded-3xl w-[340px] pl-14 py-2 leading-tight bg-[#ECEDEB33] border border-[#A1C8CA]" />
       </div>
-      <div class="md:text-justify flex flex-row flex-wrap justify-around md:justify-center gap-2 md:gap-16">
-        <div v-for="card in discover_cards" class="discover-card">
+      <div class="flex flex-row flex-wrap justify-around gap-4 gap-y-8">
+        <div v-for="card in discover_cards" class="discover-card w-4/5 md:w-5/12 xl:w-1/4">
           <div class="discover-card-image">
             <img :src="card.src" alt="" class="" />
           </div>
           <div class="">
-            <p class="my-5 discover-card-header">
+            <p class="my-3 discover-card-header">
               {{ card.title }}
               <img src="~/assets/svg/arrow.svg" alt="" class="inline">
             </p>
@@ -127,52 +128,53 @@
     </p>
   </section> -->
 
-    <footer
-      class="grid grid-flow-row grid-cols-4 md:grid-cols-[6fr_1fr_1fr_1fr_1fr] py-14 px-10 gap-x-10 mt-28 bg-[#FAFBFA]">
-      <div>
+    <footer class="flex flex-col lg:flex-row lg:px-24 gap-4 lg:gap-12 justify-between py-14 px-10 mt-28 bg-[#FAFBFA]">
+      <div class="mb-10">
         <img src="~/assets/images/icon.png" class="inline absolute mt-0.5 w-8" alt="">
         <p class="inline ml-10 text-2xl">Creativepay</p>
       </div>
-      <div>
-        <p class="footer-header">Creativepay</p>
-        <ul>
-          <li>Job</li>
-          <li>Companies</li>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Changelog</li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-header">Social Media</p>
-        <ul>
-          <a href="#">
-            <li>Facebook</li>
-          </a>
-          <a href="#">
-            <li>Instagram</li>
-          </a>
-          <a href="#">
-            <li>Twitter</li>
-          </a>
-          <a href="#">
-            <li>Tiktok</li>
-          </a>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-header">Help</p>
-        <ul>
-          <li>FAQs</li>
-          <li>Support</li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-header">Contact</p>
-        <ul>
-          <li>+234 916 161 8102</li>
-          <li>hellocreativepay.com</li>
-        </ul>
+      <div class="grid grid-flow-row grid-cols-2 md:grid-cols-4 gap-10">
+        <div>
+          <p class="footer-header">Creativepay</p>
+          <ul>
+            <li>Job</li>
+            <li>Companies</li>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Changelog</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-header">Social Media</p>
+          <ul>
+            <a href="#">
+              <li>Facebook</li>
+            </a>
+            <a href="#">
+              <li>Instagram</li>
+            </a>
+            <a href="#">
+              <li>Twitter</li>
+            </a>
+            <a href="#">
+              <li>Tiktok</li>
+            </a>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-header">Help</p>
+          <ul>
+            <li>FAQs</li>
+            <li>Support</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-header">Contact</p>
+          <ul>
+            <li>+234 916 161 8102</li>
+            <li>hellocreativepay.com</li>
+          </ul>
+        </div>
       </div>
     </footer>
   </div>
@@ -260,16 +262,6 @@ export default {
   letter-spacing: -0.02em;
 }
 
-@media screen and (max-width: 768px) {
-  footer>div:first-child {
-    display: none;
-  }
-
-  .discover-card {
-    width: 40% !important;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .header-text {
     margin: 0rem 6rem;
@@ -283,7 +275,7 @@ li {
 .footer-header {
   font-weight: 700;
   letter-spacing: -0.3px;
-  font-size: 18px;
+  font-size: 20px;
   color: #1C1F32;
   margin-bottom: 12px;
 }
@@ -293,6 +285,10 @@ footer li {
   color: #1E1E1ECC;
   font-size: 16px;
   font-weight: 600;
+}
+
+#hero .number-box {
+  box-shadow: 0px 4px 25px 0px #1E1E1E0A;
 }
 
 #hero .number {
@@ -353,15 +349,21 @@ footer li {
 }
 
 .discover-card {
-  /* border p-5 w-1/3 md:w-1/4  */
   padding: 1.5rem 1.25rem;
-  width: 25%;
   background: white;
 }
 
 .discover-card:hover {
   outline: 2px solid rgba(67, 67, 122, 1);
+  box-shadow: 0px 2px 25px 0px #1E1E1E1A;
   border-radius: 20px;
+}
+
+.discover-card:focus {
+  outline: 2px solid rgba(67, 67, 122, 1);
+  box-shadow: 0px 2px 25px 0px #1E1E1E1A;
+  border-radius: 20px;
+
 }
 
 .discover-card-image {

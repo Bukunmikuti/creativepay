@@ -1,64 +1,66 @@
 <template>
 	<nav class="mx-8">
-		<div class="max-w-full flex flex-row items-center justify-between mx-auto p-4">
-			<NuxtLink to="/" class="flex items-center justify-center px-6 py-1.5 rounded-3xl header-logo-bg">
-				<img src="~/assets/svg/header.svg" class="h-4 mr-2 " />
-				<span class="self-center text-base font-semibold whitespace-nowrap text-white">Menu</span>
-			</NuxtLink>
+		<div class="max-w-full flex flex-row flex-nowrap items-center justify-between p-4">
+			<div class="flex flex-row items-baseline gap-2 lg:gap-10">
+				<NuxtLink to="/" class="flex items-center justify-center px-4 md:px-6 py-1.5 rounded-3xl header-logo-bg">
+					<img src="~/assets/svg/header.svg" class="h-4 mr-2 " />
+					<span class="self-center text-base font-semibold whitespace-nowrap text-white">Menu</span>
+				</NuxtLink>
 
-			<div class="" id="navbar-cta">
-				<ul class="hidden md:flex md:flex-row md:gap-8 font-medium p-4 mt-4">
-					<li>
-						<a href="#"
-							class="text-opacity-70 block py-2 pl-3 pr-4 text-black md:hover:text-blue-700 md:p-0">Platform</a>
-					</li>
-					<li>
-						<a href="#"
-							class="text-opacity-70 block py-2 pl-3 pr-4 text-black md:hover:text-blue-700 md:p-0">Feature</a>
-					</li>
-					<li>
-						<a href="#"
-							class="text-opacity-70 block py-2 pl-3 pr-4 text-black md:hover:text-blue-700 md:p-0">Integration</a>
-					</li>
-					<li>
-						<a href="#"
-							class="text-opacity-70 block py-2 pl-3 pr-4 text-black md:hover:text-blue-700 md:p-0">Pricing</a>
-					</li>
-					<li>
-						<a href="#"
-							class="text-opacity-70 block py-2 pl-3 pr-4 text-black md:hover:text-blue-700 md:p-0">Changelog</a>
-					</li>
-				</ul>
+				<div id="navbarLink">
+					<ul
+						class="hidden md:flex md:flex-row items-center flex-nowrap md:gap-4 lg:gap-8 text-white md:text-black font-medium p-4">
+						<li>
+							<a href="#">Platform</a>
+						</li>
+						<li>
+							<a href="#">Feature</a>
+						</li>
+						<li>
+							<a href="#">Integration</a>
+						</li>
+						<li>
+							<a href="#">Pricing</a>
+						</li>
+						<li>
+							<a href="#">Changelog</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="navbarBtn">
+				<div class="hidden md:flex flex-row flex-nowrap gap-10 md:gap-3 items-center md:ml-4">
+					<button type="button"
+						class="text-black bg-white border font-medium rounded-3xl whitespace-nowrap text-lg md:text-sm px-8 md:px-5 py-2 text-center">
+						Sign up
+					</button>
+					<button type="button"
+						class="text-white font-medium rounded-3xl text-lg md:text-sm px-8 md:px-5 py-2 text-center gradient-button">
+						Login
+					</button>
+				</div>
 			</div>
 
-			<div class="flex md:order-2 md:hidden">
-				<button data-collapse-toggle="navbar-cta" type="button" v-on:click="expandNav"
-					class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100">
-					<span class="sr-only">Open main menu</span>
-					<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd"
-							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-							clip-rule="evenodd"></path>
-					</svg>
-				</button>
+			<div id="closeOverlay" class="text-white">
+				<button type="button" v-on:click="expandNav">&times;</button>
 			</div>
-			<div class="flex flex-row items-center justify-center gap-9">
-				<button type="button" class="text-black border font-medium rounded-3xl text-sm px-5 py-2 text-center">
-					Sign up
-				</button>
-				<button type="button"
-					class="text-white font-medium rounded-3xl text-sm px-5 py-2 text-center gradient-button">
-					Login
-				</button>
-			</div>
+			<button data-collapse-toggle="navbarLink" type="button" v-on:click="expandNav"
+				class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100">
+				<span class="sr-only">Open main menu</span>
+				<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
 		</div>
 		<hr class="mx-auto w-full" />
 	</nav>
 
 	<!-- <nav class="bg-white border-gray-200">
-		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-		</div>
+	<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+	</div>
 	</nav> -->
 </template>
 
@@ -66,15 +68,20 @@
 export default {
 	methods: {
 		expandNav: function () {
-			let nav = document.getElementById("navbar-cta");
+			let nav = document.getElementById("navbarLink");
+			let navBtn = document.getElementById("navbarBtn");
+			let closeBtn = document.getElementById("closeOverlay");
 
 			if (nav.className === "") {
 				nav.className += " overlay";
 				nav.style.height = "100%";
-				console.log(nav.childNodes);
+				navBtn.className += " overlay-btn";
+				closeBtn.style.display = "block";
 			} else {
-				nav.className = "";
 				nav.style.height = "0%";
+				navBtn.className = "";
+				closeBtn.style.display = "none";
+				nav.className = "";
 			}
 		}
 	}
@@ -83,33 +90,4 @@ export default {
 
 <style scoped>
 @import url("~/assets/css/navbar.css");
-
-.overlay {
-	height: 0%;
-	width: 100%;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	background-color: black;
-	background-color: rgba(0, 0, 0, 0.8);
-	overflow-x: hidden;
-	transition: 0.5s;
-}
-
-.overlay ul {
-	position: relative;
-	top: 25%;
-	width: 100%;
-	text-align: center;
-	margin-top: 30px;
-	color: white;
-}
-
-.overlay li {
-	padding: 8px;
-	text-decoration: none;
-	display: block;
-	transition: 0.3s;
-}
 </style>
