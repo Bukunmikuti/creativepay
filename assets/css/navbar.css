@@ -42,7 +42,7 @@ li {
   display: block !important;
   font-size: 20px;
   position: relative;
-  top: 20%;
+  top: 15%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
@@ -62,11 +62,12 @@ li {
   width: 100%;
   height: 50px;
   z-index: 1;
-  top: 75%;
+  top: 70%;
 }
 
 .overlay-btn div {
   display: flex !important;
+  flex-direction: column;
   justify-content: center;
 }
 

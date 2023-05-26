@@ -50,15 +50,16 @@
       <p class="header-text text-center">
         Explore a World of Job Opportunities and Find Your Perfect Fit
       </p>
-      <div class="">
-        <i class="text-center absolute w-6 mt-[5px] ml-5 "><img src="~/assets/svg/search.svg" class="inline"></i>
+      <div>
+        <i class="text-center absolute w-4 sm:w-6 mt-[5px] ml-3 sm:ml-5"><img src="~/assets/svg/search.svg"
+            class="inline"></i>
         <input type="search" name="search-bar" id="search-bar" placeholder="Search by company name or role..." disabled
-          class="rounded-3xl w-[340px] pl-14 py-2 leading-tight bg-[#ECEDEB33] border border-[#A1C8CA]" />
+          class="rounded-3xl w-full sm:w-[340px] pl-10 sm:pl-14 py-2 leading-tight bg-[#ECEDEB33] border border-[#A1C8CA] placeholder:text-sm sm:placeholder:text-base" />
       </div>
       <div class="flex flex-row flex-wrap justify-around gap-4 gap-y-8">
         <div v-for="card in discover_cards" class="discover-card w-4/5 md:w-5/12 xl:w-1/4">
           <div class="discover-card-image">
-            <img :src="card.src" alt="" class="" />
+            <img :src="card.src" :alt="`${card.title} icon`" class="" />
           </div>
           <div class="">
             <p class="my-3 discover-card-header">
@@ -73,14 +74,36 @@
           src="~/assets/svg/btn_arrow.svg" alt="" /></button>
     </section>
 
-    <!-- <section id="for-candidate" class="flex flex-col gap-8 justify-center mx-8 mt-28 px-6 py-12 items-start">
-    <h1 class="header-tag">
-      For Candidate
-    </h1>
-    <p class="header-text">
-      Create your profile for free and start now
-    </p>
-  </section> -->
+    <section id="for-candidate"
+      class="flex flex-col gap-8 justify-center items-start mx-4 sm:mx-8 lg:mx-20 mt-28 px-4 sm:px-8 lg:px-16 py-12">
+      <h1 class="header-tag">
+        For Candidate
+      </h1>
+      <p class="header-text">
+        Create your profile for free and start now
+      </p>
+      <div class="flex flex-row flex-nowrap justify-between self-stretch gap-8 lg:gap-x-16 overflow-x-scroll p-0 m-0">
+        <div v-for="card in candidate_cards"
+          class="flex flex-col bg-white flex-shrink-0 justify-between items-stretch rounded-3xl w-full sm:w-full md:w-3/5 lg:w-1/3">
+          <div class="blurred bg-fuchsia-100 h-60 border-0 w-full">
+          </div>
+          <div class="px-4">
+            <p class="text-2xl text-[#1E1E1E] font-semibold my-3">{{ card.title }}</p>
+            <p class="text-sm text-[#1E1E1E] font-semibold opacity-50 mb-4">
+              {{ card.description }}
+            </p>
+            <button type="button"
+              class="bg-[#F0F0F9] text-[#6260DD] text-sm font-bold rounded-xl px-4 py-1 mb-10 whitespace-nowrap hover:bg-[#6260DD] hover:text-white">
+              <span class="pr-2">{{ card.btn_text }}</span><svg class="inline fill-[#6260DD]" width="14" height="13"
+                viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 6.73908C13.9951 6.21297 13.7832 5.70998 13.41 5.33908L9.12 1.03908C8.93264 0.852833 8.67919 0.748291 8.415 0.748291C8.15081 0.748291 7.89736 0.852833 7.71 1.03908C7.61627 1.13205 7.54188 1.24265 7.49111 1.36451C7.44034 1.48637 7.4142 1.61707 7.4142 1.74908C7.4142 1.88109 7.44034 2.0118 7.49111 2.13366C7.54188 2.25552 7.61627 2.36612 7.71 2.45908L11 5.73908H1C0.734784 5.73908 0.48043 5.84444 0.292893 6.03197C0.105357 6.21951 0 6.47386 0 6.73908C0 7.00429 0.105357 7.25865 0.292893 7.44618C0.48043 7.63372 0.734784 7.73908 1 7.73908H11L7.71 11.0291C7.5217 11.2161 7.41538 11.4702 7.41444 11.7355C7.41351 12.0009 7.51802 12.2558 7.705 12.4441C7.89198 12.6324 8.1461 12.7387 8.41146 12.7396C8.67683 12.7406 8.9317 12.636 9.12 12.4491L13.41 8.14908C13.7856 7.77573 13.9978 7.26865 14 6.73908Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="feature-advantage" class="flex flex-col gap-8 justify-center mx-8 mt-28 items-center">
       <h1 class="header-tag">
@@ -93,7 +116,7 @@
     </section>
 
     <section id="today-job"
-      class="flex flex-col gap-8 justify-center items-start mx-8 lg:mx-20 mt-28 px-8 lg:px-16 py-12">
+      class="flex flex-col gap-8 justify-center items-start mx-4 sm:mx-8 lg:mx-20 mt-28 px-4 sm:px-8 lg:px-16 py-12">
       <h1 class="header-tag">
         Today's Job
       </h1>
@@ -104,8 +127,9 @@
         <button type="button" class="button">Previous featured jobs <img class="inline h-5 mt-[3px] ml-1 absolute"
             src="~/assets/svg/btn_arrow.svg" alt="" /></button>
       </div>
-      <div class="flex flex-row flex-wrap justify-center lg:justify-between items-center gap-y-8 gap-x-8 mt-4">
-        <div v-for="card in job_cards" class="job-card px-8 py-10 rounded-md w-4/5 md:w-5/12 xl:w-1/4">
+      <div class="flex flex-row flex-wrap justify-center lg:justify-between items-stretch gap-y-8 gap-x-8 mt-4">
+        <div v-for="card in job_cards"
+          class="job-card flex flex-col justify-around rounded-3xl w-full md:w-5/12 xl:w-1/4">
           <div class="job-card-image mb-6">
             <img :src="card.src" :alt="card.title + ' logo'">
           </div>
@@ -115,7 +139,7 @@
           <div class="job-card-text font-semibold text-base mb-3">
             {{ card.description }}
           </div>
-          <div>
+          <div class="flex flex-wrap flex-row">
             <span v-for="tag in card.tags" class="job-card-tag" :class="`bg-[${tag.bgColor}] text-[${tag.color}]`">
               {{ tag.title }}
             </span>
@@ -124,21 +148,28 @@
       </div>
     </section>
 
-    <!-- <section>
-    <h1 class="header-tag">
-      Our podcast
-    </h1>
-    <p class="header-text">
-      Hear what we have to say about our openings
-    </p>
-  </section> -->
+    <section class="flex flex-col gap-8 justify-center mx-8 md:mx-16 mt-28 items-center">
+      <h1 class="header-tag">
+        Our podcast
+      </h1>
+      <p class="header-text">
+        Hear what we have to say about our openings
+      </p>
+      <div class="flex flex-wrap flex-row justify-between gap-8 lg:gap-16">
+        <div v-for="card in podcast_cards" class="w-full md:w-5/12 xl:w-1/4">
+          <div class="bg-black h-[455px] rounded-3xl"></div>
+          <p class="text-2xl text-[#1C1F32] font-bold mt-4 px-2">{{ card.name }}</p>
+          <p class="text-base font-bold text-[#1E1E1E80] mt-4 px-2">{{ card.description }}</p>
+        </div>
+      </div>
+    </section>
 
     <footer class="flex flex-col lg:flex-row lg:px-24 gap-4 lg:gap-12 justify-between py-14 px-10 mt-28 bg-[#FAFBFA]">
       <div class="mb-10">
         <img src="~/assets/images/icon.png" class="inline absolute mt-0.5 w-8" alt="">
         <p class="inline ml-10 text-2xl">Creativepay</p>
       </div>
-      <div class="grid grid-flow-row grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <p class="footer-header">Creativepay</p>
           <ul>
@@ -188,22 +219,22 @@
 <script>
 import icon from "~/assets/icon/Icon.ico"
 
-import imgUI from "~/assets/images/ui_designer.png"
-import imgVisual from "~/assets/images/visual_animator.png"
-import imgArt from "~/assets/images/art_director.png"
-import imgFont from "~/assets/images/font_designer.png"
-import imgFront from "~/assets/images/front_dev.png"
-import imgBack from "~/assets/images/back_dev.png"
-import imgUX from "~/assets/images/ux_research.png"
-import img3D from "~/assets/images/3d_designer.png"
-import imgGraphics from "~/assets/images/graphics_designer.png"
+import imgUI from "~/assets/images/discover/ui_designer.png"
+import imgVisual from "~/assets/images/discover/visual_animator.png"
+import imgArt from "~/assets/images/discover/art_director.png"
+import imgFont from "~/assets/images/discover/font_designer.png"
+import imgFront from "~/assets/images/discover/front_dev.png"
+import imgBack from "~/assets/images/discover/back_dev.png"
+import imgUX from "~/assets/images/discover/ux_research.png"
+import img3D from "~/assets/images/discover/3d_designer.png"
+import imgGraphics from "~/assets/images/discover/graphics_designer.png"
 
-import imgBQ from "~/assets/images/bq_ltd.png"
-import imgBeyond from "~/assets/images/beyond.png"
-import imgEcho from "~/assets/images/echo_dyn.png"
-import imgNeo from "~/assets/images/neo_health.png"
-import imgSolaris from "~/assets/images/solaris.png"
-import imgTimeKeep from "~/assets/images/time_keep.png"
+import imgBQ from "~/assets/images/opportunities/bq_ltd.png"
+import imgBeyond from "~/assets/images/opportunities/beyond.png"
+import imgEcho from "~/assets/images/opportunities/echo_dyn.png"
+import imgNeo from "~/assets/images/opportunities/neo_health.png"
+import imgSolaris from "~/assets/images/opportunities/solaris.png"
+import imgTimeKeep from "~/assets/images/opportunities/time_keep.png"
 
 export default {
   data() {
@@ -293,6 +324,43 @@ export default {
           src: imgNeo,
           tags: [{ title: "Product Design", bgColor: "#1C1F3226", color: "#1C1F32" }]
         },
+      ],
+      candidate_cards: [
+        {
+          title: "Create Account",
+          description: "Once the sign-up process is tested and working, you can start promoting your application to potential users and directing them to the sign-up page/form.",
+          btn_text: "Create Account",
+          image: "",
+        },
+        {
+          title: "Search Roles",
+          description: "Once the sign-up process is tested and working, you can start promoting your application to potential users and directing them to the sign-up page/form.",
+          btn_text: "Browse roles",
+          image: "",
+        },
+        {
+          title: "Speak to recuiters",
+          description: "Once the sign-up process is tested and working, you can start promoting your application to potential users and directing them to the sign-up page/form.",
+          btn_text: "Send Proposal",
+          image: "",
+        },
+      ],
+      podcast_cards: [
+        {
+          name: "Tumise Ayan",
+          description: "Understanding work policy. Understanding term of service and contract ",
+          image: ""
+        },
+        {
+          name: "Adura perry",
+          description: "The business of being creative. Managing work life  and personal personal life ",
+          image: ""
+        },
+        {
+          name: "Oluwanifemi",
+          description: "Dealing with laid off and tips on getting getting back into the market",
+          image: ""
+        },
       ]
     }
   }
@@ -309,6 +377,19 @@ export default {
   /* overflow-x: hidden; */
   letter-spacing: -0.02em;
   transition: 0.5s;
+}
+
+/* very small screens like the Galaxy Fold */
+@media screen and (max-width: 300px) {
+  .header-text {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-text {
+    font-size: 2rem !important;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -453,12 +534,34 @@ footer li {
 
 #for-candidate,
 #today-job {
-  background: rgba(236, 237, 235, 1);
+  background: #FAFBFA;
+
 }
 
+#for-candidate .header-text,
 #today-job .header-text {
   margin: 0;
   text-align: left;
+}
+
+#for-candidate .blurred {
+  position: relative;
+  border-radius: inherit;
+}
+
+#for-candidate .blurred::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background: linear-gradient(to bottom, #fff0, #ffff);
+}
+
+#for-candidate button:hover>svg {
+  margin-left: 5px;
+  fill: white;
 }
 
 .job-card {
@@ -490,5 +593,6 @@ footer li {
   border-radius: 20px;
   font-weight: 600;
   font-size: 11px;
+  white-space: nowrap;
 }
 </style>
