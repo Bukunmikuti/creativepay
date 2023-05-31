@@ -1,0 +1,81 @@
+.header-logo-bg {
+  background: linear-gradient(
+    102.06deg,
+    #6260dd -48.23%,
+    #21242e -1.34%,
+    #6260dd 110.35%,
+    #21242e 164.91%
+  );
+}
+
+.gradient-button {
+  background: linear-gradient(90.81deg, #6260dd -43.97%, #43437a 160.54%);
+  background-blend-mode: darken;
+}
+
+li {
+  list-style: none;
+}
+
+#navbarLink li {
+  opacity: 0.7;
+}
+
+#navbarLink li:hover {
+  color: rgb(29, 78, 216);
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed !important;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay ul {
+  display: block !important;
+  font-size: 20px;
+  position: relative;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay li {
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay-btn {
+  position: fixed !important;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  top: 70%;
+}
+
+.overlay-btn div {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#closeOverlay {
+  position: fixed;
+  top: 15px;
+  left: 85%;
+  display: none;
+  font-size: 60px;
+  z-index: 10;
+}

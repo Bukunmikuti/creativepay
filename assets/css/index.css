@@ -1,0 +1,254 @@
+.body {
+  font-family: Manrope, sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+  transition: 0.5s;
+}
+
+/* very small screens like the Galaxy Fold */
+@media screen and (max-width: 300px) {
+  .header-text {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-text {
+    font-size: 2rem !important;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-text {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-text {
+    width: 50%;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer-header {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  font-size: 20px;
+  color: #1C1F32;
+  margin-bottom: 12px;
+}
+
+footer li {
+  margin-bottom: 10px;
+  color: #1E1E1ECC;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#hero .number-box {
+  box-shadow: 0px 4px 25px 0px #1E1E1E0A;
+}
+
+#hero .number {
+  color: #43437A;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#hero .number+p {
+  color: #1E1E1E;
+  opacity: 0.5;
+  font-weight: 500;
+  text-align: center;
+  font-size: 26px;
+}
+
+.button {
+  color: #ECEDEB;
+  padding: 0.5rem 2.4rem 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #6260DD;
+}
+
+.button:hover {
+  background: linear-gradient(90.13deg, #6260DD -16.47%, #1C1F32 9.91%, #43437A 100.77%, rgba(98, 96, 221, 0.74) 124.22%);
+}
+
+.button:hover img {
+  content: "";
+  padding-left: 5px;
+}
+
+.header-tag {
+  padding: 4px 20px;
+  background: rgba(241, 241, 253, 1);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(30, 30, 30, 0.5);
+  text-align: center;
+}
+
+.header-tag .circle {
+  background: #1E1E1E80;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0px 10px;
+}
+
+.header-text {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1C1F32;
+  background-color: white;
+  background-image: linear-gradient(93.66deg, #1C1F32 -1.44%, #1C1F32 -1.43%, #6260DD 76.08%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+}
+
+.discover-card {
+  padding: 1.5rem 1.25rem;
+  background: white;
+}
+
+.discover-card:focus,
+.discover-card:hover {
+  outline: 2px solid rgba(67, 67, 122, 1);
+  box-shadow: 0px 2px 25px 0px #1E1E1E1A;
+  border-radius: 20px;
+}
+
+.discover-card:hover .discover-card-header>img {
+  padding-left: 15px;
+}
+
+.discover-card-image {
+  width: 50px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.discover-card-image img {
+  margin: auto;
+  width: 40px;
+}
+
+.discover-card-header {
+  color: rgba(67, 67, 122, 1);
+  font-weight: 600;
+}
+
+.discover-card-text {
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+#for-candidate,
+#today-job {
+  background: #FAFBFA;
+
+}
+
+#for-candidate .header-text,
+#today-job .header-text {
+  margin: 0;
+  text-align: left;
+}
+
+#for-candidate .blurred {
+  position: relative;
+  border-radius: inherit;
+}
+
+#for-candidate .blurred::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  background: linear-gradient(to bottom, #fff0, #ffff);
+}
+
+#for-candidate button:hover>svg {
+  margin-left: 5px;
+  fill: white;
+}
+
+.job-card {
+  background: white;
+  border: 0.5px solid #1E1E1E80;
+  box-shadow: 0px 1px 5px 0px #1E1E1E26;
+  padding: 18px 16px;
+}
+
+.job-card-image {
+  width: 60px;
+}
+
+.job-card-header {
+  color: #1e1e1ecc;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.job-card-text {
+  color: #1e1e1ecc;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.job-card-tag {
+  padding: 4px 12px;
+  margin-right: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.podcast-image-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template: 1fr / 1fr;
+}
+
+.podcast-image-container > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.podcast-image {
+  z-index: 0;
+}
+
+.podcast-logo {
+  padding: 0.75rem;
+  z-index: 1;
+  opacity: 0;
+}
+
+.podcast-image:hover {
+  filter: brightness(0.6);
+}
+
+.podcast-image:hover+ .podcast-logo {
+  opacity: 1;
+}
+
